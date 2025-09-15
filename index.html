@@ -33,6 +33,10 @@
       color: #333;
       overflow-x: hidden;
     }
+
+    body * {
+      border: 1px solid red
+    }
     
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Montserrat', sans-serif;
@@ -57,7 +61,7 @@
     }
 
     .top-strip {
-      font-size: 11px;
+      font-size: 1rem;
     }
     
     .top-strip a { 
@@ -76,7 +80,7 @@
     .navbar {
       background-color: var(--pure-white);
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 15px 0;
+
       transition: all 0.3s;
     }
     
@@ -124,7 +128,7 @@
 
     .company-logo{
       transform: scale(0.6);
-      transform-origin: top left
+      
     }
 
     /* Hero Section */
@@ -710,10 +714,10 @@
 
   <!-- NAV -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-    <div class="container">
-      
-      <a class="navbar-brand d-flex align-items-center justify-content-between" href="#">
-        <div class="d-flex flex-column gap-0 company-logo" >
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <a class=" navbar-brand" href="#">
+        <div class="d-flex flex-column gap-0 company-logo align-items-center ">
           <img src="Images/Chinsel-logo.png" width=150px alt="Chinsel-Construction" class="m-auto" >
           <div style="font-weight:800; color:var(--brand-deep)" style="background:green">Chinsel Construction</div>
         </div>
