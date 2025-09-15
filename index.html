@@ -109,6 +109,11 @@
       color: var(--brand-green);
     }
 
+    .company-logo{
+      transform: scale(0.7);
+      transform-origin: top left
+    }
+
     /* Hero Section */
     .hero {
       background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Images/greendale-chinsel-construction.jpg');
@@ -695,19 +700,18 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <div class="brand-badge">
-          <div class="d-flex flex-column gap-0" >
-            <img src="Images/Chinsel-logo.png" width=150px alt="Chinsel-Construction" class="m-auto" 
-            
-            >
-            <div style="font-weight:800; color:var(--brand-deep)" style="background:green"
-            >Chinsel Construction</div>
+        <div class="">
+          <div class="d-flex flex-column gap-0 company-logo" >
+            <img src="Images/Chinsel-logo.png" width=150px alt="Chinsel-Construction" class="m-auto" >
+            <div style="font-weight:800; color:var(--brand-deep)" style="background:green">Chinsel Construction</div>
           </div>
         </div>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
         <span class="navbar-toggler-icon"></span>
       </button>
+      </a>
+      
 
       <div class="collapse navbar-collapse" id="navMain">
         <ul class="navbar-nav ms-auto align-items-lg-center">
