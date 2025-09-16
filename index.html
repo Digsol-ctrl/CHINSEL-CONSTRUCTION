@@ -94,12 +94,12 @@
       color: var(--brand-deep);
       padding: 0;
       display:flex;
-      justify-content:flex-start;
-
-      
+      justify-content:start;
+      height:50px;
+      width:fit-content; 
     }
     
-    .navbar-brand span {
+    .navbar-brand-span {
       color: var(--brand-blue);
     }
     
@@ -133,7 +133,8 @@
 
     .company-logo{
       transform: scale(0.6);
-     
+      transform-origin:top left;
+      margin-left: 8px;
       
     }
 
@@ -173,6 +174,12 @@
       border-radius: 30px;
       transition: all 0.3s;
       animation: fadeIn 1.5s ease;
+    }
+
+    @media (max-width:500px){
+      .btn-primary {
+        padding: 12px
+      }
     }
     
     .btn-primary:hover {
@@ -689,12 +696,12 @@
     /* Floating shapes */
     .floating-shape{
       position: absolute;
-      border-radius: 40%;
-      opacity: .06;
+      border-radius: 30%;
+      opacity: .1;
       filter: blur(18px);
       transform: rotate(12deg);
     }
-    .floating-shape.s1{ background: var(--brand-blue); width: 380px; height:380px; right:-80px; top:-120px; }
+    /* .floating-shape.s1{ background: var(--brand-blue); width: 380px; height:380px; right:-80px; top:-120px; } */
     .floating-shape.s2{ background: var(--brand-green); width: 260px; height:260px; left:-80px; bottom:-80px; }
 
     @media (max-width: 767px){
@@ -720,17 +727,24 @@
 
   <!-- NAV -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-    <div class="container d-flex justify-content-between align-items-center">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
 
-      <a class="navbar-brand d-flex flex-column gap-0  align-items-center justify-content-start" href="#">
+      <a class="navbar-brand d-flex flex-column gap-0  align-items-cente justify-content-start" href="#">
         
-          <img src="Images/Chinsel-logo.png" width=150px alt="Chinsel-Construction" class="m-auto" >
-          <div class="company-logo"  style="font-weight:800; color:var(--brand-deep)" style="background:green">Chinsel Construction</div>
+          <img src="Images/Chinsel-logo.png" width=150px alt="Chinsel-Construction" class="" >
+          <div class="company-logo"  style="font-weight:800; color:var(--brand-deep);">Chinsel Construction</div>
   
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-      <span class="navbar-toggler-icon"></span></button>
+      <button class="navbar-toggler" type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#navMain" 
+              aria-controls="navMain" 
+              aria-expanded="false" 
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
       
       
 
@@ -755,12 +769,16 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6" data-aos="fade-right">
-          <h1 class="display-5 fw-bold">We design and build places that work — <span style="color:var(--brand-green)">safely</span> and on time.</h1>
-          <p class="lead mt-3">Chinsel Construction offers professional plan drawings, 3D plans, brickwork, carpentry, tiling and project management across Zimbabwe. We combine local understanding with modern execution to deliver value and durability.</p>
+          <h1 class="display-5 fw-bold">We design and build places that work — <span style="color:var(--brand-green)">safely</span>
+             and on time.</h1>
+          <p class="lead mt-3">Chinsel Construction offers professional plan drawings, 3D plans, brickwork,
+             carpentry, tiling and project management across Zimbabwe. We combine local understanding with
+              modern execution to deliver value and durability.</p>
 
           <div class="mt-4 d-flex gap-3">
             <a class="btn btn-lg btn-primary" href="tel:+263774307208"><i class="fa-solid fa-phone"></i> Book a Consult</a>
-            <a class="btn btn-lg btn-outline-light" href="mailto:russchinzenz@gmail.com"><i class="fa-regular fa-envelope"></i> Email Us</a>
+            <a class="btn btn-lg btn-outline-success align-content-center d-flex align-items-center" href="https://wa.me/263774307208">
+              <i class="fab fa-whatsapp-square fa-2x text-success"></i> <span class="text-white m-1" > Whatsapp Us</span></a>
           </div>
 
           <div class="mt-4">
@@ -772,49 +790,33 @@
           <!-- Visual grid of service highlights -->
           <div class="row g-3">
             <div class="col-6">
-              <div class="p-3 service-card">
-                <div class="d-flex align-items-start gap-3">
+              <div class="p-3 service-card bg-transparent">
+                <div class="d-flex align-items-start justify-content-center gap-3">
                   <div class="service-icon"><i class="fa-solid fa-drafting-compass"></i></div>
-                  <div>
-                    <h5 class="mb-1">Plan Drawing</h5>
-                    <p class="mb-0">Precise technical drawings ready for approvals & construction.</p>
-                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-6">
-              <div class="p-3 service-card">
-                <div class="d-flex align-items-start gap-3">
+              <div class="p-3 service-card bg-transparent">
+                <div class="d-flex align-items-center justify-content-center gap-3">
                   <div class="service-icon"><i class="fa-solid fa-cube"></i></div>
-                  <div>
-                    <h5 class="mb-1">3D Plans</h5>
-                    <p class="mb-0">Realistic 3D visualizations for client approvals and marketing.</p>
-                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-6">
-              <div class="p-3 service-card">
-                <div class="d-flex align-items-start gap-3">
-                  <div class="service-icon"><i class="fa-solid fa-brick-wall"></i></div>
-                  <div>
-                    <h5 class="mb-1">Brick Work</h5>
-                    <p class="mb-0">Strong, straight, and durable masonry for lasting structures.</p>
-                  </div>
+              <div class="p-3 service-card bg-transparent">
+                <div class="d-flex align-items-center justify-content-center gap-3">
+                  <div class="service-icon"><i class="fa-solid fa-project-diagram"></i></div>
                 </div>
               </div>
             </div>
 
             <div class="col-6">
-              <div class="p-3 service-card">
-                <div class="d-flex align-items-start gap-3">
-                  <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                  <div>
-                    <h5 class="mb-1">Carpentry & Tiling</h5>
-                    <p class="mb-0">Custom joinery & clean, level tile finishes for interiors.</p>
-                  </div>
+              <div class="p-3 service-card bg-transparent">
+                <div class="d-flex align-items-center justify-content-center gap-3">
+                  <div class="service-icon"><i class="fas fa-hammer"></i></div>
                 </div>
               </div>
             </div>
@@ -870,7 +872,7 @@
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
           <div class="service-card h-100">
             <div class="service-icon">
-              <i class="fa-solid fa-hands"></i>
+              <i class="fas fa-hammer"></i>
             </div>
             <h3>Carpentry</h3>
             <p>Custom cabinets, doors, and fittings made with precision and practical design in mind.</p>
@@ -1251,6 +1253,8 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ once:true, duration: 800 });
